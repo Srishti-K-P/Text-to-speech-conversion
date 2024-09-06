@@ -11,10 +11,7 @@ def show_initial_options():
     return: None
     """
     st.markdown("<h1 style='text-align: center; color: green;'>Welcome to PDF-to-Speech App</h1>", unsafe_allow_html=True)
-
-    # Increase the size of the specific text
     st.markdown("<h3 style='font-size:22px;'><br>Please choose an option to proceed:<br></h3>", unsafe_allow_html=True)
-
     col1, col2 = st.columns(2)
     
     with col1:
@@ -74,7 +71,6 @@ def show_signup_form():
         else:
             st.error(message)
 
-    # Added 'Back to Home' button
     if st.button("Back to Home", key="back_button"):
         st.session_state["show_signup"] = False
         st.session_state["show_login"] = False
@@ -88,7 +84,6 @@ def pdf_to_speech_ui():
     """
     st.title(f"Hello, {st.session_state['username']}!")
 
-    # Display logout button
     if st.sidebar.button("Logout", key="logout_button"):
         logout_user()
 
